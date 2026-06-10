@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTG & Sunny Dev Studio | Official Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(26, 26, 36, 0.75);
+            --text-color: #c5c6c7;
+            --neon-cyan: #45f3ff;
+            --gaming-color: #ff3c00;
+            --dev-color: #00e5ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Poppins', sans-serif; overflow-x: hidden; position: relative; }
+        .bg-texture { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0), radial-gradient(rgba(255, 255, 255, 0.02) 2px, transparent 0); background-size: 20px 20px, 40px 40px; z-index: -1; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(11, 12, 16, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; z-index: 100; }
+        .neon-text { font-family: 'Rajdhani', sans-serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; color: #fff; text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan); }
+        nav a { color: var(--text-color); text-decoration: none; margin-left: 20px; font-weight: 600; transition: 0.3s ease; }
+        nav a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
+        .hero { text-align: center; padding: 80px 20px; background: linear-gradient(180deg, rgba(69,243,255,0.05) 0%, rgba(0,0,0,0) 100%); }
+        .hero h1 { font-family: 'Rajdhani', sans-serif; font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 15px; }
+        .hero p { max-width: 600px; margin: 0 auto 25px auto; font-size: 1.1rem; line-height: 1.6; }
+        .counter-box { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.05); padding: 10px 20px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.1); font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; }
+        .counter-img { height: 25px; vertical-align: middle; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .channel-card { background: var(--card-bg); border-radius: 16px; padding: 40px; margin-bottom: 50px; backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s; }
+        .gaming-card:hover { transform: translateY(-5px); border-color: var(--gaming-color); box-shadow: 0 0 25px rgba(255, 60, 0, 0.2); }
+        .dev-card:hover { transform: translateY(-5px); border-color: var(--dev-color); box-shadow: 0 0 25px rgba(0, 229, 255, 0.2); }
+        .channel-header { margin-bottom: 30px; text-align: left; }
+        .channel-header h2 { font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; color: #fff; margin-bottom: 10px; }
+        .channel-header p { margin-bottom: 20px; color: #a3a3a3; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-family: 'Rajdhani', sans-serif; letter-spacing: 1px; transition: 0.3s ease; }
+        .btn-gaming { background: var(--gaming-color); color: #fff; }
+        .btn-gaming:hover { box-shadow: 0 0 15px var(--gaming-color); transform: scale(1.05); }
+        .btn-dev { background: var(--dev-color); color: #0b0c10; }
+        .btn-dev:hover { box-shadow: 0 0 15px var(--dev-color); transform: scale(1.05); }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
+        @media (max-width: 500px) { .video-grid { grid-template-columns: 1fr; } }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: #555; border-top: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body>
+    <div class="bg-texture"></div>
+    <header>
+        <div class="logo-zone"><span class="neon-text">CREATOR HUB</span></div>
+        <nav>
+            <a href="#gaming"><i class="fas fa-gamepad"></i> VTG</a>
+            <a href="#dev"><i class="fas fa-code"></i> Sunny Dev Studio</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Welcome to the Official Hub</h1>
+        <p>Explore gaming setups, live streams, and professional game development projects all in one place.</p>
+        <div class="counter-box">
+            <i class="fas fa-eye"></i> Website Visits: 
+            <img src="https://profile-counter.glitch.me/VTG_Hub/count.svg" alt="Visitor Counter" class="counter-img">
+        </div>
+    </section>
+    <main class="container">
+        <section id="gaming" class="channel-card gaming-card">
+            <div class="channel-header">
+                <h2><i class="fas fa-headset"></i> Vamshi Telugu Gaming</h2>
+                <p>Your ultimate destination for high-energy gaming, live streams, and community action.</p>
+                <a href="https://youtube.com/@vamshitelugugamingyt?si=SnS5A0F4QxRkXSvZ" target="_blank" class="btn btn-gaming">
+                    <i class="fab fa-youtube"></i> Subscribe to VTG
+                </a>
+            </div>
+            <div class="video-grid">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=vamshitelugugamingyt" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YOUR_PLAYLIST_ID_HERE" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <section id="dev" class="channel-card dev-card">
+            <div class="channel-header">
+                <h2><i class="fas fa-laptop-code"></i> Sunny Dev Studio</h2>
+                <p>Dive deep behind the scenes of game development, coding tutorials, and simulator builds.</p>
+                <a href="https://youtube.com/@sunnydevstudio?si=XXLnaYZ8u6mM_ff8" target="_blank" class="btn btn-dev">
+                    <i class="fab fa-youtube"></i> Subscribe to Dev Studio
+                </a>
+            </div>
+            <div class="video-grid">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=sunnydevstudio" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YOUR_SECOND_PLAYLIST_ID_HERE" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 VTG & Sunny Dev Studio. Built with passion using GitHub Pages.</p>
+    </footer>
+</body>
+</html>
